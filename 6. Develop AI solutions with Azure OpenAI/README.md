@@ -3,16 +3,24 @@ Azure OpenAI brings the generative AI models to the Azure platform, enabling a d
 
 # Agenda 
 Introduction to Azure Open AI services
+
 Develop NLP solutions with Azure Open AI
+
 Prompt engineering with Azure Open AI
+
 Integrate Azure Open AI into your app
 
 # Request Access
-Azure OpenAI: Request Access to Azure OpenAI Service (microsoft.com)
+Azure OpenAI: [Request Access to Azure OpenAI Service (microsoft.com)](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR7en2Ais5pxKtso_Pz4b1_xUOFA5Qk1UWDRBMjg0WFhPMkIzTzhKQ1dWNyQlQCN0PWcu)
 
 # Related Resources
-Develop AI solutions with Azure OpenAI
-Learning Plan Resources for Azure OpenAI
+[Develop AI solutions with Azure OpenAI](https://learn.microsoft.com/en-us/training/paths/develop-ai-solutions-azure-openai/)
+
+[Repo for Learn exercises on Azure OpenAI](https://github.com/MicrosoftLearning/mslearn-openai)
+
+[Learning Plan Resources for Azure OpenAI](https://microsoft.github.io/PartnerResources/skilling/ai-ml-academy/openai)
+
+[OpenAI Cookbook](https://github.com/openai/openai-cookbook)
 
 
 
