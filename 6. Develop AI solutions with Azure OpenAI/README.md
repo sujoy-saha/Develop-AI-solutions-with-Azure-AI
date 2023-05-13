@@ -22,6 +22,8 @@ Azure OpenAI: [Request Access to Azure OpenAI Service (microsoft.com)](https://c
 
 [OpenAI Cookbook](https://github.com/openai/openai-cookbook)
 
+[Azure OpenAI Samples](https://github.com/Azure/azure-openai-samples)
+
 
 
 
