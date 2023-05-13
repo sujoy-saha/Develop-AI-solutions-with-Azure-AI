@@ -18,7 +18,9 @@ Azure OpenAI: [Request Access to Azure OpenAI Service (microsoft.com)](https://c
 
 [Repo for Learn exercises on Azure OpenAI](https://github.com/MicrosoftLearning/mslearn-openai)
 
-[Learning Plan Resources for Azure OpenAI](https://microsoft.github.io/PartnerResources/skilling/ai-ml-academy/openai)
+[Learning Plan Resources for Azure OpenAI](https://microsoft.github.io/PartnerResources/azure/data-analytics-ai/openai)
+
+[AI & ML Academy - Azure OpenAI](https://microsoft.github.io/PartnerResources/skilling/ai-ml-academy/openai)
 
 [OpenAI Cookbook](https://github.com/openai/openai-cookbook)
 
