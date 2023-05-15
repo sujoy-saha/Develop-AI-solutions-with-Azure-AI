@@ -8,7 +8,7 @@ Develop NLP solutions with Azure OpenAI
 
 Prompt engineering with Azure OpenAI
 
-Integrate Azure OpenAI into your app
+Integrate ChatGPT into your app
 
 # Request Access
 Azure OpenAI: [Request Access to Azure OpenAI Service (microsoft.com)](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR7en2Ais5pxKtso_Pz4b1_xUOFA5Qk1UWDRBMjg0WFhPMkIzTzhKQ1dWNyQlQCN0PWcu)
