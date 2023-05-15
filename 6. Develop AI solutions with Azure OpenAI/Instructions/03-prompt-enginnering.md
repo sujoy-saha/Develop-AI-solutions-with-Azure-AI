@@ -1,1 +1,5 @@
-# Prompt engineering with Azure Open AI
+---
+lab:
+    title: 'Prompt engineering with Azure OpenAI'
+---
+# Prompt engineering with Azure OpenAI
