@@ -1,7 +1,6 @@
 remote_theme: sujoy-saha/Jekyll-Theme
 exclude:
-  - readme.md
-  - .github/
+  - readme.md  
 header_pages:
   - index.html
 author: Sujoy Kumar Saha
