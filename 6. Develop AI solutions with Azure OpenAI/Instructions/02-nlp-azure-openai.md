@@ -64,6 +64,13 @@ Choose Build or Build Solution, or press Ctrl+Shift+B, to compile only those pro
 
 ### .NET CLI:
 dotnet add package Azure.AI.OpenAI --prerelease
+    
+    **C#**
+
+    ```bash
+    cd CSharp
+    dotnet add package Azure.AI.OpenAI --prerelease
+    ```
 
 ### Visual Studio:
 Install the client library for .NET with NuGet https://www.nuget.org/packages/Azure.AI.OpenAI
