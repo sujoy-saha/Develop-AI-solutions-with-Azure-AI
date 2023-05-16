@@ -41,9 +41,12 @@ Azure OpenAI provides a web-based portal named **Azure OpenAI Studio**, that you
 ## Create a new .Net Core application
 You can create a new .Net Core console application either using a console window (such as cmd, PowerShell, or Bash) or Visual Studio. 
 
-### .NET CLI:
-dotnet new console -n generate-text
+    **.NET CLI**
 
+    ```bash
+    dotnet new console -n generate-text
+    ```
+    
 ### Visual Studio:
 There are multiple ways to create a new project in Visual Studio. When you first open Visual Studio, the start window appears, and from there, you can select Create a new project. If the Visual Studio development environment is already open, you can create a new project by choosing File > New > Project on the menu bar. You can also select the New Project button on the toolbar, or press Ctrl+Shift+N.
 Select "Console App" template and type the name of the project as "generate-text".
@@ -78,25 +81,29 @@ setx AZURE_OPENAI_ENDPOINT "REPLACE_WITH_YOUR_KEY_VALUE_HERE"
 
 From the project directory, open the program.cs file and replace with the following code:
 
-using Azure;
-using Azure.AI.OpenAI;
-using static System.Environment;
+    **C#**
 
-string endpoint = GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT");
-string key = GetEnvironmentVariable("AZURE_OPENAI_KEY");
+    ```bash
+    using Azure;
+    using Azure.AI.OpenAI;
+    using static System.Environment;
 
-// Enter the deployment name you chose when you deployed the model.
-string engine = "text-davinci";
+    string endpoint = GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT");
+    string key = GetEnvironmentVariable("AZURE_OPENAI_KEY");
 
-OpenAIClient client = new(new Uri(endpoint), new AzureKeyCredential(key));
+    // Enter the deployment name you chose when you deployed the model.
+    string engine = "text-davinci";
 
-string prompt = "What is the name of the capital of India??";
-Console.Write($"Prompt : {prompt}\n");
+    OpenAIClient client = new(new Uri(endpoint), new AzureKeyCredential(key));
 
-Response<Completions> completionsResponse = 
-    await client.GetCompletionsAsync(engine, prompt);
-string completion = completionsResponse.Value.Choices[0].Text;
-Console.WriteLine($"Azure OpenAI response: {completion}");
+    string prompt = "What is the name of the capital of India??";
+    Console.Write($"Prompt : {prompt}\n");
+
+    Response<Completions> completionsResponse = 
+        await client.GetCompletionsAsync(engine, prompt);
+    string completion = completionsResponse.Value.Choices[0].Text;
+    Console.WriteLine($"Azure OpenAI response: {completion}");
+    ```
 
 ## Run the application
 
