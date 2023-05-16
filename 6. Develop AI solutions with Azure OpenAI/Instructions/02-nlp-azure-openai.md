@@ -38,8 +38,8 @@ Azure OpenAI provides a web-based portal named **Azure OpenAI Studio**, that you
 
 > **Note**: Please ignore this step if you have already deployed this model in the previous exercise.
 
-## Create a new .Net Core application
-You can create a new .Net Core console application either using a console window (such as cmd, PowerShell, or Bash) or Visual Studio. 
+## Set up a .Net Core application with Azure OpenAI  
+1. You can create a new .Net Core console application either using a console window (such as cmd, PowerShell, or Bash) or Visual Studio. 
 
     **.NET CLI**
 
@@ -47,46 +47,47 @@ You can create a new .Net Core console application either using a console window
     dotnet new console -n generate-text
     ```
     
-### Visual Studio:
-There are multiple ways to create a new project in Visual Studio. When you first open Visual Studio, the start window appears, and from there, you can select Create a new project. If the Visual Studio development environment is already open, you can create a new project by choosing File > New > Project on the menu bar. You can also select the New Project button on the toolbar, or press Ctrl+Shift+N.
+    **Visual Studio**
+    
+    There are multiple ways to create a new project in Visual Studio. When you first open Visual Studio, the start window appears, and from there, you can select Create a new project. If the Visual Studio development environment is already open, you can create a new project by choosing File > New > Project on the menu bar. You can also select the New Project button on the toolbar, or press Ctrl+Shift+N.
 Select "Console App" template and type the name of the project as "generate-text".
 
-## Build .Net Core application
-
-### .NET CLI:
-dotnet build
-
-### Visual Studio:
-On the menu bar, choose Build, and then choose one of the following commands:
-Choose Build or Build Solution, or press Ctrl+Shift+B, to compile only those project files and components that have changed since the most recent build.
-
-## Install the OpenAI .NET client library
-
-### .NET CLI:
-dotnet add package Azure.AI.OpenAI --prerelease
+2. Build .Net Core application
     
-    **C#**
+    **.NET CLI**
 
     ```bash
-    cd CSharp
+    dotnet build
+    ```
+    
+    **Visual Studio**
+    
+    On the menu bar, choose Build, and then choose one of the following commands:
+    - Choose Build or Build Solution, or press **Ctrl+Shift+B**, to compile only those project files and components that have changed since the most recent build.
+
+3. Install the OpenAI .NET client library
+
+    **.Net CLI**
+
+    ```bash
     dotnet add package Azure.AI.OpenAI --prerelease
     ```
 
-### Visual Studio:
-Install the client library for .NET with NuGet https://www.nuget.org/packages/Azure.AI.OpenAI
+    **Visual Studio**
+    
+    Install the client library for .NET with NuGet https://www.nuget.org/packages/Azure.AI.OpenAI
+    
 
-## Retrieve Key and endpoint
+4. Retrieve Key and endpoint
 
-To successfully make a call against Azure OpenAI, you'll need an endpoint and a key. Go to your resource in the Azure portal. The Endpoint and Keys can be found in the Resource Management section.
+    To successfully make a call against Azure OpenAI, you'll need an endpoint and a key. Go to your resource in the Azure portal. The Endpoint and Keys can be found in the Resource Management section.
 
-## Set the environment vaiables
+5. Set the environment vaiables
 
-setx AZURE_OPENAI_KEY "REPLACE_WITH_YOUR_KEY_VALUE_HERE"
-setx AZURE_OPENAI_ENDPOINT "REPLACE_WITH_YOUR_KEY_VALUE_HERE"
+    - setx AZURE_OPENAI_KEY "REPLACE_WITH_YOUR_KEY_VALUE_HERE"
+    - setx AZURE_OPENAI_ENDPOINT "REPLACE_WITH_YOUR_KEY_VALUE_HERE"
 
-## Update the program.cs file
-
-From the project directory, open the program.cs file and replace with the following code:
+6. From the project directory, open the program.cs file and replace with the following code
 
     **C#**
 
@@ -112,13 +113,16 @@ From the project directory, open the program.cs file and replace with the follow
     Console.WriteLine($"Azure OpenAI response: {completion}");
     ```
 
-## Run the application
+7. Run the application
 
-### .NET CLI:
-dotnet run program.cs
-
-### Visual Studio:
-To start building the program, press the green Start button on the Visual Studio toolbar, or press F5 or Ctrl+F5. Using the Start button or F5 runs the program under the debugger.
+    **.NET CLI**
+    ```bash
+    dotnet run program.cs
+    ```
+    
+    **Visual Studio**
+    
+    To start building the program, press the green Start button on the Visual Studio toolbar, or press F5 or Ctrl+F5. Using the Start button or F5 runs the program under the debugger.
 
 ## Clean up
 
