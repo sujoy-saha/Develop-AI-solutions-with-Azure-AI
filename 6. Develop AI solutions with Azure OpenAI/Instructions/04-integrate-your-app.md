@@ -82,33 +82,49 @@ Select "Console App" template and type the name of the project as "generate-text
 
     To successfully make a call against Azure OpenAI, you'll need an endpoint and a key. Go to your resource in the Azure portal. The Endpoint and Keys can be found in the Resource Management section.
 
-5. Set the environment vaiables
+5. Add appsettings.json file to the project and add the following code to the file
 
-    - setx AZURE_OPENAI_KEY "REPLACE_WITH_YOUR_KEY_VALUE_HERE"
-    - setx AZURE_OPENAI_ENDPOINT "REPLACE_WITH_YOUR_KEY_VALUE_HERE"
+    **C#**
+
+    ```bash
+    {
+        "AzureOAIEndpoint": "REPLACE_WITH_YOUR_END_POINT_HERE",
+        "AzureOAIKey": "REPLACE_WITH_YOUR_KEY_VALUE_HERE",
+        "AzureOAIModelName": "text-turbo"
+    }
+    ```
+
 
 6. From the project directory, open the program.cs file and replace with the following code
 
     **C#**
 
     ```bash
+    // Implicit using statements are included
+    using System.Text;
+    using System.Text.Json;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.Configuration.Json;
     using Azure;
+    // Add Azure OpenAI package
     using Azure.AI.OpenAI;
-    using static System.Environment;
 
-    string endpoint = GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT");
-    string key = GetEnvironmentVariable("AZURE_OPENAI_KEY");
+    // Build a config object and retrieve user settings.
+    IConfiguration config = new ConfigurationBuilder()
+        .AddJsonFile("appsettings.json")
+        .Build();
+    string? oaiEndpoint = config["AzureOAIEndpoint"];
+    string? oaiKey = config["AzureOAIKey"];
+    string? oaiModelName = config["AzureOAIModelName"];
 
-    // Enter the deployment name you chose when you deployed the model.
-    string engine = "text-turbo";
-
-    OpenAIClient client = new(new Uri(endpoint), new AzureKeyCredential(key));
-
+    //Set OpenAI configuration settings
+    OpenAIClient client = new(new Uri(oaiEndpoint), new AzureKeyCredential(oaiKey));
     string prompt = "What is the name of the capital of India??";
     Console.Write($"Prompt : {prompt}\n");
 
-    Response<Completions> completionsResponse = 
-        await client.GetCompletionsAsync(engine, prompt);
+    //Send a completion call to generate an answer
+    Response<Completions> completionsResponse =
+        await client.GetCompletionsAsync(oaiModelName, prompt);
     string completion = completionsResponse.Value.Choices[0].Text;
     Console.WriteLine($"Azure OpenAI response: {completion}");
     ```
